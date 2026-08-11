@@ -1,4 +1,4 @@
-https://github.com/filhosterceiracultura/AGENDAFTC/new/main?filename=.github%2Fworkflows%2Fpublicar-agenda.yml name: Publicar Agenda FTC
+publicar Agenda FTC
 
 on:
   push:
