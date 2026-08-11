@@ -1,0 +1,43 @@
+https://github.com/filhosterceiracultura/AGENDAFTC/new/main?filename=.github%2Fworkflows%2Fpublicar-agenda.yml name: Publicar Agenda FTC
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  publicar:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v6
+
+      - name: Preparar agenda
+        run: |
+          mkdir site
+          unzip -q Agenda_Semanal_Marca_FTC_PWA.zip -d pacote
+          cp -R pacote/AGENDA_SEMANAL_MARCA_FTC/. site/
+          cp site/Agenda_Semanal_Marca_FTC.html site/index.html
+
+      - name: Configurar publicação
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Enviar agenda
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
