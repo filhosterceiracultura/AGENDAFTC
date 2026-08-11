@@ -1,3 +1,4 @@
+name: Publicar Agenda FTC
 on:
   push:
     branches: [main]
