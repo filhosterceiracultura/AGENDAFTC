@@ -23,7 +23,7 @@ jobs:
       - name: Preparar agenda
         run: |
           mkdir site
-          unzip -q Agenda_Semanal_Marca_FTC_PWA.zip -d pacote
+          unzip -q AGENDA_FTC_FINAL_CRIPTOGRAFADA.zip -d pacote
           cp -R pacote/AGENDA_SEMANAL_MARCA_FTC/. site/
           cp site/Agenda_Semanal_Marca_FTC.html site/index.html
 
