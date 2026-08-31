@@ -23,7 +23,7 @@ jobs:
       - name: Preparar agenda
         run: |
           mkdir site
-          unzip -q AGENDA_FTC_AJUDA_INTERNA_V2.zip -d pacote
+         unzip -q AGENDA_FTC_PRIVACIDADE_CODIGO_V3.zip -d pacote
           cp -R pacote/AGENDA_SEMANAL_MARCA_FTC/. site/
           cp site/Agenda_Semanal_Marca_FTC.html site/index.html
 
